@@ -14,9 +14,9 @@ except ModuleNotFoundError:
 
     if __name__ == "__main__":
         chatbot()
-    sys.exit()  # Exit if transformers isn't available
+    sys.exit()  # Exit program here if transformers not available
 
-# Available models
+# Available models (ensure these are downloaded or accessible via API)
 models = {
     "GPT-2": "gpt2",
     "BLOOM": "bigscience/bloom-560m",
