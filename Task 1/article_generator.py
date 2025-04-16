@@ -4,18 +4,19 @@ try:
     from transformers import pipeline
 except ModuleNotFoundError:
     print("Error: The 'transformers' module is not installed. Please install it using 'pip install transformers'")
+    
     def chatbot():
         print("Exiting due to missing dependencies.")
         return
-    
+
     def generate_article(prompt, model_name):
         return ""
-    
+
     if __name__ == "__main__":
         chatbot()
-    
-# Available models (ensure these are downloaded or accessible via API)
+    sys.exit()  # Exit if transformers is not available
 
+# ✅ Available working models
 models = {
     "GPT-2": "gpt2",
     "BLOOM": "bigscience/bloom-560m",
@@ -24,9 +25,7 @@ models = {
 
 def generate_article(prompt, model_name):
     try:
-        
-        generator = pipeline("text-generation", model=model_name, device=-1)
-
+        generator = pipeline("text-generation", model=model_name, device=-1)  # CPU mode
         response = generator(prompt, max_length=512, num_return_sequences=1)
         return response[0]['generated_text']
     except Exception as e:
@@ -46,24 +45,21 @@ def chatbot():
             
             if not prompt or prompt.lower() == "exit":
                 return
-            
-            
-            print("Select a model: 1) GPT-2  2) BLOOM  3) GPT-Neo")
-model_key = {"1": "GPT-2", "2": "BLOOM", "3": "GPT-Neo"}.get(choice)
 
+            print("Select a model: 1) GPT-2  2) BLOOM  3) GPT-Neo")
             print("Enter model number:")
-            
+
             try:
                 choice = sys.stdin.readline().strip()
             except ValueError:
                 print("Error: Unable to read input. Exiting chatbot.")
                 return
-            
-            model_key = {"1": "Llama", "2": "BLOOM", "3": "Falcon"}.get(choice)
+
+            model_key = {"1": "GPT-2", "2": "BLOOM", "3": "GPT-Neo"}.get(choice)
             if not model_key:
                 print("Invalid choice. Try again.")
                 continue
-            
+
             model_name = models[model_key]
             article = generate_article(prompt, model_name)
             print("\nGenerated Article:")
