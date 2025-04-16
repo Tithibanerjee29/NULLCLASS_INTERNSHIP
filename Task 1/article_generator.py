@@ -15,15 +15,18 @@ except ModuleNotFoundError:
         chatbot()
     
 # Available models (ensure these are downloaded or accessible via API)
+
 models = {
-    "Llama": "meta-llama/Llama-3.1-8B",
-    "BLOOM": "bigscience/bloom-7b1",
-    "Falcon": "tiiuae/falcon-7b"
+    "GPT-2": "gpt2",
+    "BLOOM": "bigscience/bloom-560m",
+    "GPT-Neo": "EleutherAI/gpt-neo-1.3B"
 }
 
 def generate_article(prompt, model_name):
     try:
-        generator = pipeline("text-generation", model=model_name)
+        
+        generator = pipeline("text-generation", model=model_name, device=-1)
+
         response = generator(prompt, max_length=512, num_return_sequences=1)
         return response[0]['generated_text']
     except Exception as e:
@@ -44,7 +47,10 @@ def chatbot():
             if not prompt or prompt.lower() == "exit":
                 return
             
-            print("Select a model: 1) Llama 3.1  2) BLOOM  3) Falcon 180B")
+            
+            print("Select a model: 1) GPT-2  2) BLOOM  3) GPT-Neo")
+model_key = {"1": "GPT-2", "2": "BLOOM", "3": "GPT-Neo"}.get(choice)
+
             print("Enter model number:")
             
             try:
