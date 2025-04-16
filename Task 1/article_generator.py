@@ -4,7 +4,7 @@ try:
     from transformers import pipeline
 except ModuleNotFoundError:
     print("Error: The 'transformers' module is not installed. Please install it using 'pip install transformers'")
-    
+
     def chatbot():
         print("Exiting due to missing dependencies.")
         return
@@ -14,9 +14,9 @@ except ModuleNotFoundError:
 
     if __name__ == "__main__":
         chatbot()
-    sys.exit()  # Exit if transformers is not available
+    sys.exit()  # Exit if transformers isn't available
 
-# ✅ Available working models
+# Available models
 models = {
     "GPT-2": "gpt2",
     "BLOOM": "bigscience/bloom-560m",
@@ -25,7 +25,7 @@ models = {
 
 def generate_article(prompt, model_name):
     try:
-        generator = pipeline("text-generation", model=model_name, device=-1)  # CPU mode
+        generator = pipeline("text-generation", model=model_name, device=-1)
         response = generator(prompt, max_length=512, num_return_sequences=1)
         return response[0]['generated_text']
     except Exception as e:
@@ -33,7 +33,7 @@ def generate_article(prompt, model_name):
 
 def chatbot():
     print("Welcome to the Article Generator Chatbot!")
-    
+
     try:
         while True:
             print("Enter a topic for the article (or type 'exit' to quit):")
@@ -42,7 +42,7 @@ def chatbot():
             except ValueError:
                 print("Error: Unable to read input. Exiting chatbot.")
                 return
-            
+
             if not prompt or prompt.lower() == "exit":
                 return
 
@@ -64,6 +64,7 @@ def chatbot():
             article = generate_article(prompt, model_name)
             print("\nGenerated Article:")
             print(article)
+
     except ValueError:
         print("I/O error encountered. Please ensure input is supported in this environment.")
 
