@@ -9,6 +9,14 @@ Welcome to my internship project repository for **NULLCLASS**, where I worked on
 🏢 **GitHub Repo:** [NULLCLASS_INTERNSHIP](https://github.com/Tithibanerjee29/NULLCLASS_INTERNSHIP)
 
 ---
+## Technologies Used
+- Python 3.x
+- Hugging Face Transformers
+- Google Palm & Gemini AI
+- TensorFlow
+- PyTorch
+- NumPy, pandas, etc.
+
 
 ## 📁 Tasks Overview
 
@@ -44,13 +52,24 @@ All models were evaluated based on:
 - Performance comparisons documented in the notebooks.
 
 ---
-
+## Setup Instructions
+To set up the project on your local machine, follow these steps:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Tithibanerjee29/NULLCLASS_INTERNSHIP
+    ```
+2. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 ## 📑 Additional Files
 
 - ✅ `requirements.txt` – Dependencies for easy environment setup
 - ✅ `Internship Report.docx` – Detailed report with all required sections
 - ✅ Saved Models / Weights – Uploaded to Google Drive and linked below
 
+## Internship Report
+For a detailed explanation of the tasks, challenges faced, and the final outcomes, refer to the **Internship Report**: [Internship Report.docx](https://github.com/Tithibanerjee29/NULLCLASS_INTERNSHIP/blob/master/Internship%20Report.docx).
 📎 **Google Drive Link (Saved Models & Weights):**  
 [🔗 Click Here to Access](https://drive.google.com/drive/folders/1zxbZZrn0vBNLlR1KB3aTgQzbSY8gofSV?usp=drive_link)
 
