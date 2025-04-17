@@ -33,7 +33,7 @@ def generate_image_from_text(text_description):
     Generate an image from a description using the Gemini API.
     """
     try:
-        api_url = "AIzaSyC9vJNwD8-utKpsXUO0eSGOOWndtMdYc_Y"  # Replace with actual Gemini API URL
+        api_url = "YOUR API KEY"  # Replace with actual Gemini API URL
         headers = {
             "Authorization": "Bearer YOUR_API_KEY",  # Replace with your Gemini API key
             "Content-Type": "application/json",
