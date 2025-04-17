@@ -1,0 +1,75 @@
+ Internship Report – Task 3
+Intern Name: Tithi Banerjee
+Internship Provider: NullClass
+Internship Period: 30-03-2025 to 30-04-2025
+Task Title: Sentiment Analysis Integration into Chatbot
+
+📝 Objective
+To integrate sentiment analysis into a chatbot to detect and respond appropriately to customer emotions during interactions. The chatbot should be able to classify user input into positive, negative, or neutral sentiments and respond with empathy and contextual appropriateness.
+
+⚙️ Implementation Details
+Tools & Libraries Used:
+
+transformers library by Hugging Face
+
+Pre-trained sentiment analysis pipeline (based on BERT)
+
+Steps Followed:
+
+Imported the sentiment analysis pipeline using pipeline("sentiment-analysis").
+
+Created a function to analyze the user's input, detect the sentiment, and return a custom response.
+
+Customized responses based on:
+
+POSITIVE → Encouraging and supportive tone
+
+NEGATIVE → Sympathetic and problem-solving tone
+
+Neutral/Other → Professional and helpful tone
+
+Developed the chatbot interface in both Python CLI and Jupyter Notebook for interactive testing.
+
+🤖 Sample Code Snippet
+python
+Copy
+Edit
+from transformers import pipeline
+
+# Load sentiment analysis model
+sentiment_pipeline = pipeline("sentiment-analysis")
+
+# Define response logic
+def generate_response(user_input):
+    result = sentiment_pipeline(user_input)[0]
+    sentiment = result['label']
+    confidence = round(result['score'] * 100, 2)
+
+    if sentiment == "POSITIVE":
+        return f"😊 I'm really glad to hear that! (Confidence: {confidence}%) Is there anything else I can help with?"
+    elif sentiment == "NEGATIVE":
+        return f"🙁 I'm sorry to hear that. (Confidence: {confidence}%) Let’s work on making this better for you."
+    else:
+        return f"😐 Got it. (Confidence: {confidence}%) Let me know how I can assist further."
+✅ Expected Outcome Achieved
+✔️ The chatbot successfully detects sentiment from user messages.
+
+✔️ It generates appropriate responses to match user emotions.
+
+✔️ Enhanced user engagement through emotionally aware interaction.
+
+📊 Evaluation
+
+Criteria	                                 Result
+Accuracy of Sentiment Detection	        High (using state-of-the-art pre-trained model)
+Appropriateness of Responses	        Contextually empathetic and relevant
+Impact on Customer Satisfaction 	Positive, due to improved emotional intelligence
+📁 Deliverables Submitted
+Sentiment-aware chatbot code (Python script + Jupyter Notebook)
+
+Sample test outputs
+
+Internship report (this document)
+
+📌 Conclusion
+The integration of sentiment analysis has significantly enhanced the chatbot's capability to understand user emotions and respond in a more human-like and helpful way. This task has provided hands-on experience with NLP models and real-world chatbot enhancement techniques.
