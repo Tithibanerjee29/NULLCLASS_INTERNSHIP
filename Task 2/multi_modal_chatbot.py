@@ -3,9 +3,10 @@ import os
 from transformers import pipeline
 from PIL import Image
 import requests
+import matplotlib.pyplot as plt  # For image display in Colab environments
 
 # Set up Google Cloud authentication (for API use)
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path_to_your_google_credentials.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path_to_your_google_credentials.json"  # Ensure correct path
 
 # Available models for text generation
 models = {
@@ -16,6 +17,9 @@ models = {
 
 # Function to generate text-based articles
 def generate_article(prompt, model_name):
+    """
+    Generates an article based on the prompt and model.
+    """
     try:
         generator = pipeline("text-generation", model=model_name)
         response = generator(prompt, max_length=512, num_return_sequences=1)
@@ -25,6 +29,9 @@ def generate_article(prompt, model_name):
 
 # Function to generate an image from a text description (using Gemini API)
 def generate_image_from_text(text_description):
+    """
+    Generate an image from a description using the Gemini API.
+    """
     try:
         api_url = "https://api.gemini.ai/v1/generate_image"  # Replace with actual Gemini API URL
         headers = {
@@ -44,11 +51,18 @@ def generate_image_from_text(text_description):
     except Exception as e:
         return f"Error generating image: {str(e)}"
 
-# Function to process an uploaded image and perform analysis (using Pillow)
+# Function to process an uploaded image and perform analysis (using Pillow and Matplotlib for display)
 def process_image(image_path):
+    """
+    Process an uploaded image and display it.
+    """
     try:
         with Image.open(image_path) as img:
-            img.show()  # This will display the image
+            img.show()  # Display the image locally
+            # If in Colab or similar, you may want to display it with matplotlib:
+            plt.imshow(img)
+            plt.axis('off')
+            plt.show()
             # Further processing like using Google Vision API or any other model can be done here
             return "Image processed successfully!"
     except Exception as e:
@@ -56,6 +70,9 @@ def process_image(image_path):
 
 # Main chatbot function to interact with the user
 def chatbot():
+    """
+    Interactive chatbot interface for article generation and image processing.
+    """
     print("Welcome to the Multi-Modal Chatbot!")
 
     while True:
