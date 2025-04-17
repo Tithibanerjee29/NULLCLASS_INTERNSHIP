@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path_to_your_google_credentials.json"
 
 # Your Gemini API key for image generation
-gemini_api_key = "AIzaSyC9vJNwD8-utKpsXUO0eSGOOWndtMdYc_Y"  # Replace with your actual Gemini API key
+gemini_api_key = "YOUR API KEY"  # Replace with your actual Gemini API key
 
 # Available models for text generation
 models = {
@@ -35,7 +35,7 @@ def generate_image_from_text(text_description):
     Generate an image from a description using the Gemini API.
     """
     try:
-        api_url = "AIzaSyC9vJNwD8-utKpsXUO0eSGOOWndtMdYc_Y"  # Replace with actual Gemini API endpoint
+        api_url = "YOUR API KEY"  # Replace with actual Gemini API endpoint
         headers = {
             "Authorization": f"Bearer {gemini_api_key}",
             "Content-Type": "application/json",
