@@ -1,0 +1,89 @@
+Internship Report: Development of a Multi-Modal Chatbot
+By Tithi Banerjee
+Internship Duration: March 30, 2025 – April 30, 2025
+Company: NullClass
+Project Title: Development of a Multi-Modal Chatbot using Google Palm and Gemini AI
+
+1. Introduction
+This report presents the work I carried out during my internship at NullClass, where I developed a multi-modal chatbot. The goal of the project was to extend an existing chatbot to handle both text and image content using Google Palm for text generation and Gemini AI for image creation. The expected outcome was to enable the chatbot to understand image inputs, generate relevant images based on user queries, and integrate visual and textual information seamlessly in conversations.
+
+2. Objectives
+The objectives of the internship were as follows:
+
+Text Generation: Enhance the chatbot to generate articles based on user queries using Google Palm.
+
+Image Generation: Extend the chatbot's functionality to generate images from text descriptions using Gemini AI.
+
+Multi-Modal Interaction: Create a unified experience where the chatbot could handle both textual and visual inputs and outputs.
+
+3. Technologies Used
+Google Palm: Used for generating text responses based on user input.
+
+Gemini AI: Used for generating images from text descriptions provided by the user.
+
+Python: The primary programming language used for writing the chatbot's logic and integrating different APIs.
+
+Hugging Face Transformers: Library used to integrate language models like Llama, BLOOM, and Falcon for text generation.
+
+Pillow: Python Imaging Library used to handle and display images.
+
+Requests: Library used to send API requests to the Gemini AI service for image generation.
+
+4. Methodology
+4.1. Text Generation
+To generate text content, I integrated three large language models (LLMs): Llama, BLOOM, and Falcon. These models were selected for their diverse strengths in generating coherent and contextually appropriate articles. The user could input a prompt, and the chatbot would generate an article using one of these pre-selected models. The text generation functionality was implemented using the Hugging Face Transformers library.
+
+4.2. Image Generation
+The chatbot was designed to process text input from users and generate images using Gemini AI. Gemini AI's API was used to generate images from descriptive text provided by the user. This involved setting up an HTTP request that sent the text description to Gemini's API endpoint and received the generated image URL in response. Users could then view the generated image by accessing the URL.
+
+4.3. Integration of Text and Image
+The most challenging part of this project was seamlessly integrating the functionalities of text and image generation. The chatbot was designed to:
+
+Accept both text and image inputs from users.
+
+Process text inputs to generate relevant articles using LLMs.
+
+Process image inputs by displaying them, or allowing the user to generate an image based on text descriptions.
+
+The integration was built around a simple interface that prompted the user to choose whether they wanted to input text or images, providing them with appropriate options in each case.
+
+5. Code Overview
+The core functions of the chatbot included:
+
+generate_article: A function that utilized one of the pre-selected language models (Llama, BLOOM, Falcon) to generate a textual article based on the user’s prompt.
+
+generate_image_from_text: A function that interacted with Gemini AI’s API to generate an image based on the user’s textual description.
+
+process_image: This function processed uploaded images by displaying them using the Pillow library.
+
+chatbot: The main function that handled user interactions, providing options for text and image inputs and then calling the appropriate functions to generate responses.
+
+6. Results and Discussion
+The chatbot was successfully developed and tested, and the following results were achieved:
+
+Text Generation: The chatbot generated coherent and contextually relevant articles based on user queries using Llama, BLOOM, and Falcon.
+
+Image Generation: The chatbot was able to generate high-quality images from text descriptions using Gemini AI. The generated images were relevant and aligned with the user’s input.
+
+Multi-Modal Interaction: The chatbot effectively handled both text and image inputs, providing users with a dynamic and interactive experience that integrated both modalities.
+
+7. Challenges Faced
+During the development of the multi-modal chatbot, I encountered several challenges:
+
+API Integration: The integration of Gemini AI and Google Palm required handling API authentication and setting up the proper HTTP requests. I had to manage API keys securely and ensure the APIs were correctly integrated.
+
+Model Configuration: Fine-tuning the models for optimal performance was challenging. The generation of articles varied in quality depending on the chosen model, and I had to test several configurations to ensure the best output.
+
+Error Handling: Proper error handling was critical for ensuring that the chatbot responded gracefully to issues like invalid inputs or API failures.
+
+8. Conclusion
+In conclusion, my internship at NullClass provided me with the opportunity to work with advanced AI models and create a multi-modal chatbot. By integrating both text and image generation, I was able to create a chatbot capable of understanding and responding to user inputs in a rich, dynamic manner. This project not only enhanced my technical skills but also gave me valuable experience in working with APIs and implementing machine learning models in real-world applications.
+
+9. Future Work
+For future improvements, the following features could be added:
+
+Voice Input and Output: Adding the ability to process voice inputs and generate voice-based responses would further enhance the chatbot's capabilities.
+
+Advanced Image Analysis: Integrating object detection and image recognition would allow the chatbot to analyze and provide feedback on images uploaded by users.
+
+Sentiment Analysis: Integrating sentiment analysis could enable the chatbot to adapt its responses based on the emotional tone of the user’s input.
