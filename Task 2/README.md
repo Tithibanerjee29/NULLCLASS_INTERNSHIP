@@ -8,6 +8,14 @@ This is a Python-based Multi-Modal Chatbot that can:
 ---
 
 ## 📁 Folder Structure
+multi-modal-chatbot/
+├── article_generator/       # Uses LLaMA, BLOOM, Falcon for text generation
+├── image_generator/         # Uses Gemini API for image generation
+├── image_analyzer/          # Analyze uploaded images (Pillow-based)
+├── chatbot.py               # Main chatbot logic combining text and image
+├── requirements.txt         # List of dependencies
+├── README.md                # Project documentation
+└── assets/                  # Sample images / input files
 
 
 
@@ -30,3 +38,22 @@ This is a Python-based Multi-Modal Chatbot that can:
 
 ```bash
 pip install -r requirements.txt
+
+Technologies Used
+Python 3.8+
+
+Hugging Face Transformers (LLMs)
+
+Google Gemini API (Vision & Image generation)
+
+Pillow (for image handling)
+
+Command-line interface
+
+📌 Notes
+Make sure to configure Gemini API keys (if required).
+
+Some models like LLaMA may require additional setup or use via Hugging Face Hub.
+
+This chatbot is extendable with GUI frameworks like Streamlit or Gradio.
+
