@@ -71,7 +71,7 @@ To set up the project on your local machine, follow these steps:
 ## Internship Report
 For a detailed explanation of the tasks, challenges faced, and the final outcomes, refer to the **Internship Report**: [Internship Report.docx](https://github.com/Tithibanerjee29/NULLCLASS_INTERNSHIP/blob/master/Internship%20Report.docx).
 📎 **Google Drive Link (Saved Models & Weights):**  
-[🔗 Click Here to Access](https://drive.google.com/drive/folders/1zxbZZrn0vBNLlR1KB3aTgQzbSY8gofSV?usp=drive_link)
+[🔗 Click Here to Access](https://drive.google.com/drive/folders/16zhSFAYqvEZWbmkVs-2YWHNMrERKuTcK?usp=drive_link)
 
 ---
 
