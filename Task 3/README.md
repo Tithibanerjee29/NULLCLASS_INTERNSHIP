@@ -14,6 +14,12 @@ This chatbot is designed to understand and respond to human emotions by analyzin
 - 💬 Command Line Interface (GUI optional)
 
 ---
+🧠 Technology Used
+Python 3.8+
+
+🤗 Hugging Face Transformers (pipeline for sentiment analysis)
+
+Command-line interface (CLI)
 
 ## 📦 Installation
 
@@ -21,3 +27,6 @@ This chatbot is designed to understand and respond to human emotions by analyzin
    ```bash
    git clone https://github.com/yourusername/sentiment-chatbot.git
    cd sentiment-chatbot
+   
+   python chatbot.py
+
