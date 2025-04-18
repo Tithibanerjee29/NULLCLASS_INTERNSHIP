@@ -29,17 +29,7 @@ multi-modal-chatbot/
 - Interactive command-line chatbot interface.
 
 ---
-
-## 📦 Installation Steps
-
-1. Clone this repository or download the project folder.
-2. Open a terminal inside the project folder.
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-
-Technologies Used
+🧪 Technologies Used
 Python 3.8+
 
 Hugging Face Transformers (LLMs)
@@ -57,3 +47,22 @@ Some models like LLaMA may require additional setup or use via Hugging Face Hub.
 
 This chatbot is extendable with GUI frameworks like Streamlit or Gradio.
 
+
+## 📦 Installation Steps
+
+1. Clone this repository or download the project folder.
+2. Open a terminal inside the project folder.
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+
+🛠️ How to Run
+python chatbot.py
+You will be able to:
+
+Enter a text prompt for article generation.
+
+Upload an image and get a description.
+
+Enter a description to generate an image.
